@@ -1,0 +1,125 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlinx-serialization'
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.selles.ifindit"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "API_URL", "\"https://itunes.apple.com\""
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation Libs.activity
+    implementation Libs.activityKtx
+    implementation Libs.appCompat
+    implementation Libs.cardView
+    implementation Libs.constraintLayout
+    implementation Libs.coreKtx
+    implementation Libs.coroutines
+    implementation Libs.coroutinesCore
+    implementation Libs.coroutinesTest
+    implementation Libs.glide
+    implementation Libs.koin
+    implementation Libs.koinCore
+    implementation Libs.koinScope
+    implementation Libs.koinViewModel
+    implementation Libs.kotlin
+    implementation Libs.kotlinxSerialization
+    implementation Libs.kotlinReflect
+    implementation Libs.lifeCycleCommon
+    implementation Libs.lifecycleProcess
+    implementation Libs.lifecycleRuntimeKtx
+    api Libs.lifecycleViewModelKtx
+    api Libs.lifecycleViewModelKtx
+    implementation Libs.material
+    implementation Libs.multiDex
+    implementation Libs.navigationFragment
+    implementation Libs.navigationRuntimeKtx
+    implementation Libs.navigationUiKtx
+    implementation Libs.okhttp
+    implementation Libs.retrofit
+    implementation Libs.gson
+    implementation Libs.retrofitGsonConverter
+    api Libs.mockk
+
+
+    kapt Libs.glideCompiler
+    kapt Libs.lifecycleCompiler
+
+    testImplementation Libs.coroutinesTest
+    testImplementation Libs.turbine
+    testImplementation Libs.mockitoKotlin
+    testImplementation Libs.mockk
+    testImplementation Libs.junitExt
+    testImplementation Libs.mockwebserver
+    testImplementation Libs.kotlinTest
+    testImplementation Libs.trust
+    testImplementation Libs.coreTesting
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.7.20'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.7.20'
+
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0'
+
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.7.20'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.7.20'
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    implementation "androidx.multidex:multidex:2.0.1"
+//    implementation "com.android.tools:desugar_jdk_libs:2.0.0"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation Libs.espressoContrib
+    androidTestImplementation Libs.espressoIntents
+    androidTestImplementation Libs.fragmentTest
+    androidTestImplementation Libs.mockkAndroid
+    androidTestImplementation Libs.mockitoKotlin
+    testImplementation Libs.robolectric
+    androidTestImplementation Libs.robolectricAnnotations
+}

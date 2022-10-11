@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="margin_card">16dp</dimen>
+    <dimen name="margin_elements">10dp</dimen>
+    <dimen name="margin_element_top">5dp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+    <dimen name="button_stroke_size">1sp</dimen>
+    <dimen name="margin_element_short">5dp</dimen>
+    <dimen name="margin_element_mid">10dp</dimen>
+    <dimen name="margin_element_large">20dp</dimen>
+    <dimen name="margin_detail">50dp</dimen>
+    <dimen name="bottom_sheet_side_margin">10dp</dimen>
+</resources>

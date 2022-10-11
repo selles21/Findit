@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FindItSongView">
+        <attr name="finditImageUrl" format="reference" />
+        <attr name="finditTrackName" format="string" />
+        <attr name="finditArtistName" format="string" />
+        <attr name="finditCollectionName" format="string" />
+        <attr name="finditGenreName" format="string" />
+    </declare-styleable>
+</resources>
