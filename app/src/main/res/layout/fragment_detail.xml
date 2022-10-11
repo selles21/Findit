@@ -184,6 +184,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_element_large"
                 android:textAlignment="center"
+                android:text="@string/lyrics"
                 app:layout_constraintEnd_toEndOf="@id/guidelineRight"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="@id/guidelineLeft"
