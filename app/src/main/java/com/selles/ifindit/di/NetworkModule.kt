@@ -5,6 +5,8 @@ import android.media.MediaPlayer
 import androidx.annotation.VisibleForTesting
 import com.selles.ifindit.core.remote.HttpClient
 import com.selles.ifindit.data.api.FindItService
+import com.selles.ifindit.data.mapper.ITunesSearchMapper
+import com.selles.ifindit.data.mapper.SearchResultMapper
 import com.selles.ifindit.data.repository.FindItRepositoryImpl
 import com.selles.ifindit.data.source.FindItDataSourceImpl
 import com.selles.ifindit.domain.usecase.GetITunesSearchUseCase
@@ -34,6 +36,9 @@ val presentationModule = module {
                 findItRepository = FindItRepositoryImpl(
                     findItDataSource = FindItDataSourceImpl(
                         findItService = get<HttpClient>().create(FindItService::class.java)
+                    ),
+                    iTunesMapper = ITunesSearchMapper(
+                        seachMapper = SearchResultMapper()
                     )
                 )
             ),

@@ -2,6 +2,8 @@ package com.selles.ifindit.data.integration
 
 import com.google.common.truth.Truth.assertThat
 import com.selles.ifindit.data.api.FindItService
+import com.selles.ifindit.data.mapper.ITunesSearchMapper
+import com.selles.ifindit.data.mapper.SearchResultMapper
 import com.selles.ifindit.data.repository.FindItRepositoryImpl
 import com.selles.ifindit.data.source.FindItDataSourceImpl
 import com.selles.ifindit.di.createRetrofit
@@ -29,7 +31,8 @@ class FindItRepositoryIntegrationTest {
 
     private fun createRepository(retrofit: Retrofit): FindItRepository {
         val findItDataSource = FindItDataSourceImpl(service)
-        return FindItRepositoryImpl(findItDataSource)
+        val iTunesSearchMapper = ITunesSearchMapper(SearchResultMapper())
+        return FindItRepositoryImpl(findItDataSource, iTunesSearchMapper)
     }
 
     @Test
